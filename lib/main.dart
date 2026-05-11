@@ -145,38 +145,53 @@ class _ChallengePageState extends State<ChallengePage> {
   double _pointMode = 1.0;
 
   final Map<String, double> plantDictionary = {
-  // --- VEGETABLES (1.0 Point) ---
-  "Aubergine": 1.0, "Asparagus": 1.0, "Artichoke": 1.0, "Beetroot": 1.0, "Broccoli": 1.0,
-  "Brussels Sprouts": 1.0, "Broad Beans": 1.0, "Cabbage (Green)": 1.0, "Cabbage (Red)": 1.0, "Carrot (Orange)": 1.0,
-  "Carrot (Purple)": 1.0, "Cauliflower": 1.0, "Celery": 1.0, "Chard": 1.0, "Courgette": 1.0,
-  "Cucumber": 1.0, "Fennel": 1.0, "Garlic": 1.0, "Green Beans (flat)": 1.0, "Green Beans (round)": 1.0, 
-  "Kale": 1.0, "Leek": 1.0, "Mushroom (Button)": 1.0,
-  "Mushroom (Shiitake)": 1.0, "Onion (Red)": 1.0, "Onion (White)": 1.0, "Onion (Purple)": 1.0,
-   "Pak Choi": 1.0,"Parsnip": 1.0, "Peas": 1.0, 
-  "Radish": 1.0, "Spinach": 1.0, "Spring Onions": 1.0, "Sweet Potato": 1.0, 
-  "Shallots": 1.0, "Tomato (Red)": 1.0, "Tomato (Yellow)": 1.0, "Tomato (Black)": 1.0, "Watercress": 1.0, 
+    // --- VEGETABLES (1.0 Point) ---
+    "Aubergine": 1.0, "Asparagus": 1.0, "Artichoke": 1.0, "Beetroot": 1.0,
+    "Broccoli": 1.0,
+    "Brussels Sprouts": 1.0, "Broad Beans": 1.0, "Cabbage (Green)": 1.0,
+    "Cabbage (Red)": 1.0, "Carrot (Orange)": 1.0,
+    "Carrot (Purple)": 1.0, "Cauliflower": 1.0, "Celery": 1.0, "Chard": 1.0,
+    "Courgette": 1.0,
+    "Cucumber": 1.0, "Fennel": 1.0, "Garlic": 1.0, "Green Beans (flat)": 1.0,
+    "Green Beans (round)": 1.0,
+    "Kale": 1.0, "Leek": 1.0, "Mushroom (Button)": 1.0,
+    "Mushroom (Shiitake)": 1.0, "Onion (Red)": 1.0, "Onion (White)": 1.0,
+    "Onion (Purple)": 1.0,
+    "Pak Choi": 1.0, "Parsnip": 1.0, "Peas": 1.0,
+    "Radish": 1.0, "Spinach": 1.0, "Spring Onions": 1.0, "Sweet Potato": 1.0,
+    "Shallots": 1.0, "Tomato (Red)": 1.0, "Tomato (Yellow)": 1.0,
+    "Tomato (Black)": 1.0, "Watercress": 1.0,
 
-  // --- FRUITS (1.0 Point) ---
-  "Apple (Green)": 1.0, "Apple (Red)": 1.0, "Apricot": 1.0,  "Avocado": 1.0, "Banana": 1.0, "Blueberries": 1.0,
-  "Blackberries": 1.0, "Cherries": 1.0, "Chirimoya": 1.0, 
-  "Grapefruit": 1.0, "Grapes (Green)": 1.0, "Grapes (Red)": 1.0,
-  "Kiwi": 1.0, "Lemon": 1.0, "Lime": 1.0, "Loquat": 1.0,"Mango": 1.0, "Orange": 1.0, "Pear": 1.0, "Peach": 1.0,
-  "Pineapple": 1.0, "Plum": 1.0, "Raspberries": 1.0, "Strawberries": 1.0,
+    // --- FRUITS (1.0 Point) ---
+    "Apple (Green)": 1.0, "Apple (Red)": 1.0, "Apricot": 1.0, "Avocado": 1.0,
+    "Banana": 1.0, "Blueberries": 1.0,
+    "Blackberries": 1.0, "Cherries": 1.0, "Chirimoya": 1.0,
+    "Grapefruit": 1.0, "Grapes (Green)": 1.0, "Grapes (Red)": 1.0,
+    "Kiwi": 1.0, "Lemon": 1.0, "Lime": 1.0, "Loquat": 1.0, "Mango": 1.0,
+    "Orange": 1.0, "Pear": 1.0, "Peach": 1.0,
+    "Pineapple": 1.0, "Plum": 1.0, "Raspberries": 1.0, "Strawberries": 1.0,
 
-  // --- GRAINS, LEGUMES & FERMENTED (1.0 Point) ---
-  "Barley": 1.0, "Black Beans": 1.0, "Brown Rice": 1.0, "Chickpeas": 1.0, "Edamame": 1.0,
-  "Kimchi": 1.0, "Lentils (Red)": 1.0, "Lentils (Green)": 1.0, "Miso": 1.0, "Oats": 1.0,
-  "Quinoa (White)": 1.0, "Quinoa (Red)": 1.0, "Sauerkraut": 1.0, "Tempeh": 1.0, "Tofu": 1.0,
-  "Kefir": 1.0, "Cheese": 1.0,"Extra Virgin Olive Oil": 1,
+    // --- GRAINS, LEGUMES & FERMENTED (1.0 Point) ---
+    "Barley": 1.0, "Black Beans": 1.0, "Brown Rice": 1.0, "Chickpeas": 1.0,
+    "Edamame": 1.0,
+    "Kimchi": 1.0, "Lentils (Red)": 1.0, "Lentils (Green)": 1.0, "Miso": 1.0,
+    "Oats": 1.0,
+    "Quinoa (White)": 1.0, "Quinoa (Red)": 1.0, "Sauerkraut": 1.0,
+    "Tempeh": 1.0, "Tofu": 1.0,
+    "Kefir": 1.0, "Cheese": 1.0, "Extra Virgin Olive Oil": 1,
 
-  // --- NUTS, SEEDS, SPICES & HERBS (0.5 Points) ---
-  "Almonds": 0.5, "Basil": 0.5, "Brazil Nuts": 0.5, "Cashews": 0.5, "Chia Seeds": 0.5,
-  "Chives": 0.5, "Cinnamon": 0.5, "Coriander": 0.5, "Cumin": 0.5, "Dill": 0.5, "Flaxseeds": 0.5,
-  "Ginger": 0.5, "Hazelnuts": 0.5, "Hemp Seeds": 0.5, "Mint": 0.5, "Nutmeg": 0.5, "Oregano": 0.5,
-  "Paprika": 0.5, "Parsley": 0.5, "Pecans": 0.5, "Pine Nuts": 0.5, "Pistachios": 0.5,
-  "Pumpkin Seeds": 0.5, "Rosemary": 0.5, "Sesame Seeds": 0.5, "Sunflower Seeds": 0.5,
-  "Turmeric": 0.5, "Walnuts": 0.5, 
-    
+    // --- NUTS, SEEDS, SPICES & HERBS (0.5 Points) ---
+    "Almonds": 0.5, "Basil": 0.5, "Brazil Nuts": 0.5, "Cashews": 0.5,
+    "Chia Seeds": 0.5,
+    "Chives": 0.5, "Cinnamon": 0.5, "Coriander": 0.5, "Cumin": 0.5, "Dill": 0.5,
+    "Flaxseeds": 0.5,
+    "Ginger": 0.5, "Hazelnuts": 0.5, "Hemp Seeds": 0.5, "Mint": 0.5,
+    "Nutmeg": 0.5, "Oregano": 0.5,
+    "Paprika": 0.5, "Parsley": 0.5, "Pecans": 0.5, "Pine Nuts": 0.5,
+    "Pistachios": 0.5,
+    "Pumpkin Seeds": 0.5, "Rosemary": 0.5, "Sesame Seeds": 0.5,
+    "Sunflower Seeds": 0.5,
+    "Turmeric": 0.5, "Walnuts": 0.5,
   };
 
   @override
@@ -235,7 +250,9 @@ class _ChallengePageState extends State<ChallengePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        _provider.totalPoints.toStringAsFixed(1).replaceAll('.0', ''),
+                        _provider.totalPoints
+                            .toStringAsFixed(1)
+                            .replaceAll('.0', ''),
                         style: const TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w900,
@@ -289,7 +306,7 @@ class _ChallengePageState extends State<ChallengePage> {
       ),
       child: Row(
         children: [
-          Expanded(
+          /*Expanded(
             child: Autocomplete<String>(
               optionsBuilder: (TextEditingValue textEditingValue) {
                 if (textEditingValue.text.isEmpty) return const Iterable<String>.empty();
@@ -314,6 +331,51 @@ class _ChallengePageState extends State<ChallengePage> {
                   onSubmitted: (value) {
                     _provider.addPlant(value, _pointMode);
                     controller.clear();
+                  },
+                );
+              },
+            ),
+          ),
+          */
+          Expanded(
+            child: Autocomplete<String>(
+              optionsBuilder: (TextEditingValue textEditingValue) {
+                if (textEditingValue.text.isEmpty)
+                  return const Iterable<String>.empty();
+                return plantDictionary.keys.where((String option) {
+                  return option
+                      .toLowerCase()
+                      .contains(textEditingValue.text.toLowerCase());
+                });
+              },
+              onSelected: (String selection) {
+                _provider.addPlant(
+                    selection, plantDictionary[selection] ?? _pointMode);
+                // We don't clear here because fieldViewBuilder's controller handles it
+              },
+              fieldViewBuilder:
+                  (context, controller, focusNode, onFieldSubmitted) {
+                return TextField(
+                  controller: controller,
+                  focusNode: focusNode,
+                  decoration: const InputDecoration(
+                    prefixIcon:
+                        Icon(Icons.search, size: 20, color: Color(0x331A1A1A)),
+                    hintText: 'Search or add plant...',
+                    border: InputBorder.none,
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                  ),
+                  onSubmitted: (value) {
+                    // 1. Add the plant
+                    _provider.addPlant(
+                        value, plantDictionary[value] ?? _pointMode);
+
+                    // 2. Clear the text
+                    controller.clear();
+
+                    // 3. FORCE the focus to reset. This prevents the "half-word" ghosting.
+                    focusNode.unfocus();
                   },
                 );
               },
@@ -348,7 +410,10 @@ class _ChallengePageState extends State<ChallengePage> {
           color: isSelected ? Colors.white : Colors.transparent,
           borderRadius: BorderRadius.circular(16),
           boxShadow: isSelected
-              ? [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10)]
+              ? [
+                  BoxShadow(
+                      color: Colors.black.withOpacity(0.05), blurRadius: 10)
+                ]
               : [],
         ),
         child: Text(
@@ -356,7 +421,9 @@ class _ChallengePageState extends State<ChallengePage> {
           style: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w900,
-            color: isSelected ? const Color(0xFF2E4D44) : Colors.black.withOpacity(0.2),
+            color: isSelected
+                ? const Color(0xFF2E4D44)
+                : Colors.black.withOpacity(0.2),
           ),
         ),
       ),
@@ -376,7 +443,8 @@ class _ChallengePageState extends State<ChallengePage> {
                 const Icon(Icons.eco, size: 64),
                 const SizedBox(height: 16),
                 const Text('Your garden is empty',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               ],
             ),
           ),
@@ -394,15 +462,20 @@ class _ChallengePageState extends State<ChallengePage> {
               padding: const EdgeInsets.only(bottom: 12),
               child: Card(
                 elevation: 0,
-                color: plant.isChecked ? Colors.white : Colors.white.withOpacity(0.5),
+                color: plant.isChecked
+                    ? Colors.white
+                    : Colors.white.withOpacity(0.5),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24),
                   side: BorderSide(
-                    color: plant.isChecked ? Colors.transparent : const Color(0xFFF0EDE4),
+                    color: plant.isChecked
+                        ? Colors.transparent
+                        : const Color(0xFFF0EDE4),
                   ),
                 ),
                 child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   leading: GestureDetector(
                     onTap: () => _provider.togglePlant(index),
                     child: AnimatedContainer(
@@ -410,15 +483,20 @@ class _ChallengePageState extends State<ChallengePage> {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: plant.isChecked ? const Color(0xFF2E4D44) : Colors.transparent,
+                        color: plant.isChecked
+                            ? const Color(0xFF2E4D44)
+                            : Colors.transparent,
                         border: Border.all(
-                          color: plant.isChecked ? Colors.transparent : const Color(0x202E4D44),
+                          color: plant.isChecked
+                              ? Colors.transparent
+                              : const Color(0x202E4D44),
                           width: 2,
                         ),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: plant.isChecked
-                          ? const Icon(Icons.check, color: Colors.white, size: 20)
+                          ? const Icon(Icons.check,
+                              color: Colors.white, size: 20)
                           : null,
                     ),
                   ),
@@ -427,8 +505,11 @@ class _ChallengePageState extends State<ChallengePage> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      decoration: plant.isChecked ? null : TextDecoration.lineThrough,
-                      color: plant.isChecked ? const Color(0xFF1A1A1A) : Colors.black26,
+                      decoration:
+                          plant.isChecked ? null : TextDecoration.lineThrough,
+                      color: plant.isChecked
+                          ? const Color(0xFF1A1A1A)
+                          : Colors.black26,
                     ),
                   ),
                   subtitle: Text(
@@ -436,11 +517,14 @@ class _ChallengePageState extends State<ChallengePage> {
                     style: TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.w900,
-                      color: plant.isChecked ? const Color(0xFF2E4D44) : Colors.black12,
+                      color: plant.isChecked
+                          ? const Color(0xFF2E4D44)
+                          : Colors.black12,
                     ),
                   ),
                   trailing: IconButton(
-                    icon: const Icon(Icons.delete_outline, color: Colors.black12),
+                    icon:
+                        const Icon(Icons.delete_outline, color: Colors.black12),
                     onPressed: () => _provider.removePlant(index),
                   ),
                 ),
@@ -459,7 +543,8 @@ class _ChallengePageState extends State<ChallengePage> {
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
         title: const Text('Reset Week?'),
-        content: const Text('This will clear all your progress for the current week.'),
+        content: const Text(
+            'This will clear all your progress for the current week.'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -474,7 +559,8 @@ class _ChallengePageState extends State<ChallengePage> {
               backgroundColor: Colors.redAccent,
               foregroundColor: Colors.white,
               elevation: 0,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
             ),
             child: const Text('Yes, Reset'),
           ),
