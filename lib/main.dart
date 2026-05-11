@@ -367,15 +367,21 @@ class _ChallengePageState extends State<ChallengePage> {
                         EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   ),
                   onSubmitted: (value) {
-                    // 1. Add the plant
+                    if (value.trim().isEmpty) return;
+
+                    // 1. Add the plant to your list
                     _provider.addPlant(
                         value, plantDictionary[value] ?? _pointMode);
 
-                    // 2. Clear the text
+                    // 2. Clear the actual text in the field
                     controller.clear();
 
-                    // 3. FORCE the focus to reset. This prevents the "half-word" ghosting.
+                    // 3. Reset the focus to clear the Autocomplete "memory"
                     focusNode.unfocus();
+
+                    // Optional: If you want the keyboard to stay open for the next entry,
+                    // uncomment the line below:
+                    // Future.delayed(Duration.zero, () => focusNode.requestFocus());
                   },
                 );
               },
